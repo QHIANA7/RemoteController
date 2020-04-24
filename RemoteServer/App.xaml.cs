@@ -30,6 +30,18 @@ namespace RemoteServer
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            this.Resuming += OnResuming;
+            this.EnteredBackground += OnEnteredBackground;
+            this.LeavingBackground += OnLeavingBackground;
+        }
+
+        private void OnEnteredBackground(object sender, EnteredBackgroundEventArgs e)
+        {
+            //throw new NotImplementedException();
+        }
+        private void OnLeavingBackground(object sender, LeavingBackgroundEventArgs e)
+        {
+            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -95,6 +107,11 @@ namespace RemoteServer
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: 애플리케이션 상태를 저장하고 백그라운드 작업을 모두 중지합니다.
             deferral.Complete();
+        }
+
+        private void OnResuming(object sender, object e)
+        {
+            //throw new NotImplementedException();
         }
     }
 }
